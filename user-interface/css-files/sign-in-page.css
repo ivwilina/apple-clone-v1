@@ -1,0 +1,162 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.navbar {
+        top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        user-select: none;
+}
+
+.sign-in-wrapper {
+    z-index: 9998;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+}
+
+.sign-in-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 180px auto 0px auto;
+}
+
+.sign-in-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-header {
+    position: relative;
+    width: 500px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.sign-in-header::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 70%;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 50%);
+    animation: rotate 2s linear infinite;
+}
+
+.sign-in-header::after {
+    content: '';
+    position: absolute;
+    background:  rgba(255, 255, 255, 1);
+    inset: 3px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header-title {
+    font-size: 29px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.sign-in-info {
+    position: relative;
+    border-bottom: 1px solid black;
+    margin: 45px auto 0px auto;
+    width: 500px;
+}
+
+.info-title {
+    position: absolute;
+    font-size: 21px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 1);
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all .2s ease-in;
+}
+
+
+input:focus~label,
+input:valid~label {
+    top: -10px;
+    font-size: 15px;
+    color: rgba(50, 50, 50, 1);
+}
+
+.sign-in-info input {
+    border: none;
+    background-color: transparent;
+    font-size: 21px;
+    outline: none;
+    padding: 0 35px 0 5px;
+    width: 100%;
+}
+
+.forget {
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px;
+}
+
+.forget a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+.sign-in-button {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    margin: 20px 0 10px 0;
+}
+
+.sign-in-button button {
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 21px;
+    border: 1px solid black;
+}
+
+.sign-in-button button:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    transition: .2s ease-in;
+}
+
+.register {
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+.register a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+.register a:hover {
+    text-decoration: underline;
+}

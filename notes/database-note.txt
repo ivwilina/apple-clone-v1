@@ -1,0 +1,20 @@
+-iPhone
+        +Model Name
+    JSON {
+        +Price
+        +Color
+        +Screen type
+        +Screen resolution
+        +Body frame
+        +CPU
+        +GPU
+        +RAM
+        +Max-ROM
+        +Camera system
+        +Battery
+        +Charging port
+        +Security
+    }
+
+
+    
