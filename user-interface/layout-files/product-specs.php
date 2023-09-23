@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Store</title>
-    <link rel="stylesheet" href="/baitaplon-final/user-interface/css-files/default-header.css">
+    <link rel="stylesheet" href="/baitaplon-final/user-interface/css-files/product-specs.css">
     <link rel="shortcut icon" href="/baitaplon-final/img-files/icons/apple-favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,18 @@
 
     </div>
     
+
+
+
+    <!-- <div class="footer-bar">
+
+        <?php
+
+        include_once 'default-footer.php'
+
+            ?>
+
+    </div> -->
 </body>
 
 </html>

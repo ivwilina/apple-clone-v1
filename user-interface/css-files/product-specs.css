@@ -1,0 +1,22 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.navigation-bar {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    user-select: none;
+}
+
+.footer-bar {
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    user-select: none;
+}
