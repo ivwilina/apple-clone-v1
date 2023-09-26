@@ -19,7 +19,7 @@
         <div class="nav-container">
             <ul class="nav">
                 <li>
-                    <a href="#">
+                    <a href="./main-page.php">
                         <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
                     </a>
                 </li>
