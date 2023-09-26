@@ -1,3 +1,21 @@
+<?php
+
+// sửa lại đường dẫn đến file connection
+
+require_once './php-files/sql-connection.php';
+
+$product_request = "iPhone 14";
+
+$sql_query = "SELECT * FROM product WHERE ItemName ='$product_request'";
+
+$data = mysqli_query($connect, $sql_query);
+
+$r = mysqli_fetch_assoc($data);
+
+$obj = json_decode($r['Specs']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +45,7 @@
     <section class="section1">
         <div class="container-fluid">
             <div class="title-product-name">
-                iPhone 14
+                <?php echo $r['ItemName'] ?>
             </div>
             <div class="product-display-specs">
                 <div class="product-image-container">
@@ -35,18 +53,15 @@
                         <div class="slider-item root-item" id="first">
                             Apple Store
                         </div>
-                        <div class="slider-item">
-                            <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                        </div>
-                        <div class="slider-item">
-                            <img src="/baitaplon-final/img-files/products/ip14s/ip14-p.png" alt="">
-                        </div>
-                        <div class="slider-item">
-                            <img src="/baitaplon-final/img-files/products/ip14s/ip14-pr.png" alt="">
-                        </div>
-                        <div class="slider-item">
-                            <img src="/baitaplon-final/img-files/products/ip14s/ip14-prm.png" alt="">
-                        </div>
+                        <?php
+                        foreach ($obj->imagesource as $imgsrc) {
+                            ?>
+                            <div class="slider-item">
+                                <img src=<?php echo $imgsrc->source ?> alt="">
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                     <div class="next-button" onclick="imageSliderNext()">
                         <div class="icon">
@@ -68,7 +83,7 @@
                                     Display
                                 </div>
                                 <div class="spec-info">
-                                    6,1" Super Retina XDR OLED
+                                    <?php echo $obj->display ?>
                                 </div>
                             </li>
                             <li>
@@ -76,7 +91,7 @@
                                     Main Camera
                                 </div>
                                 <div class="spec-info">
-                                    12MP|f1.5 (Wide), 12MP|f2.4 (Ultra Wide)
+                                    <?php echo $obj->main_camera ?>
                                 </div>
                             </li>
                             <li>
@@ -84,7 +99,7 @@
                                     Selfie Camera
                                 </div>
                                 <div class="spec-info">
-                                    12MP|f1.9 (Wide)
+                                    <?php echo $obj->selfie_camera ?>
                                 </div>
                             </li>
                             <li>
@@ -92,7 +107,7 @@
                                     Chipset
                                 </div>
                                 <div class="spec-info">
-                                    Apple A15 Bionic (5nm)
+                                    <?php echo $obj->chipset ?>
                                 </div>
                             </li>
                             <li>
@@ -100,15 +115,7 @@
                                     Ram
                                 </div>
                                 <div class="spec-info">
-                                    6GB
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Storage
-                                </div>
-                                <div class="spec-info">
-                                    128GB / 256GB / 512GB
+                                    <?php echo $obj->ram ?>
                                 </div>
                             </li>
                             <li>
@@ -116,7 +123,7 @@
                                     Battery
                                 </div>
                                 <div class="spec-info">
-                                    3,279mAH
+                                    <?php echo $obj->battery ?>
                                 </div>
                             </li>
                             <li>
@@ -124,7 +131,7 @@
                                     OS
                                 </div>
                                 <div class="spec-info">
-                                    IOS 16
+                                    <?php echo $obj->os ?>
                                 </div>
                             </li>
                         </ul>
@@ -135,56 +142,38 @@
                 <div class="color">
                     <div class="title">Choose your favorite color.</div>
                     <ul class="color-list">
-                        <li>
-                            <div style="background-color: cyan">Xanh</div>
-                        </li>
-                        <li>
-                            <div style="background-color: purple">Tím</div>
-                        </li>
-                        <li>
-                            <div style="background-color: yellow">Vàng</div>
-                        </li>
-                        <li>
-                            <div style="background-color: black">Đen</div>
-                        </li>
-                        <li>
-                            <div style="background-color: white">Trắng</div>
-                        </li>
+                        <?php
+                        foreach ($obj->color as $color) {
+                            ?>
+                            <li>
+                                <div style="background-color: <?php echo $color->hex ?>">
+                                    <?php echo $color->color ?>
+                                </div>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div class="storage">
                     <div class="title">Storage.</div>
                     <ul class="storage-list">
-                        <li>
-                            <div>
-                                <div class="storage-size">
-                                    128GB
+                        <?php
+                        foreach ($obj->storage as $storage) {
+                            ?>
+                            <li>
+                                <div>
+                                    <div class="storage-size">
+                                        <?php echo $storage->size ?>
+                                    </div>
+                                    <div class="storage-price">
+                                        <?php echo $storage->price ?>
+                                    </div>
                                 </div>
-                                <div class="storage-price">
-                                    699$
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <div class="storage-size">
-                                    256GB
-                                </div>
-                                <div class="storage-price">
-                                    799$
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <div class="storage-size">
-                                    512GB
-                                </div>
-                                <div class="storage-price">
-                                    899$
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
