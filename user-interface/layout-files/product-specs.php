@@ -145,7 +145,7 @@ $obj = json_decode($r['Specs']);
                         <?php
                         foreach ($obj->color as $color) {
                             ?>
-                            <li>
+                            <li class="color-selection" id="<?php echo $color->color?>" onclick="selectColor(this.id)">
                                 <div style="background-color: <?php echo $color->hex ?>">
                                     <?php echo $color->color ?>
                                 </div>
@@ -162,12 +162,12 @@ $obj = json_decode($r['Specs']);
                         foreach ($obj->storage as $storage) {
                             ?>
                             <li>
-                                <div>
+                                <div class="storage-selection" id="<?php echo $storage->size?>" onclick="selectStorage(this.id)">
                                     <div class="storage-size">
                                         <?php echo $storage->size ?>
                                     </div>
                                     <div class="storage-price">
-                                        <?php echo $storage->price ?>
+                                        <?php echo $storage->price ?>$
                                     </div>
                                 </div>
                             </li>

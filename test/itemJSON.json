@@ -6,12 +6,12 @@
   "chipset": "Apple A15 Bionic (5nm)",
   "ram": "6GB",
   "storage": [
-    { "size": "128GB", "price": "699$" },
-    { "size": "256GB", "price": "799$" },
-    { "size": "512GB", "price": "899$" }
+    { "size": "128GB", "price": "699" },
+    { "size": "256GB", "price": "799" },
+    { "size": "512GB", "price": "899" }
   ],
   "color": [
-    { "color": "red", "hex": "#a6b9ca" },
+    { "color": "blue", "hex": "#a6b9ca" },
     { "color": "pink", "hex": "#e5ddea" },
     { "color": "yellow", "hex": "#fff498" },
     { "color": "black", "hex": "#323940" }
@@ -20,7 +20,7 @@
   "os": "IOS 16",
   "imagesource": [
     {
-      "color": "red",
+      "color": "blue",
       "source": "/baitaplon-final/img-files/products/ip14s/ip14.png"
     },
     {

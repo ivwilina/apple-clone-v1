@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2023 at 08:32 PM
+-- Generation Time: Sep 27, 2023 at 01:25 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bag`
+--
+
+CREATE TABLE `bag` (
+  `BagId` varchar(100) NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `BagItem` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`BagItem`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -38,7 +50,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ItemName`, `ItemType`, `Specs`) VALUES
-('iPhone 14', 'iPhone', '{ \"id\": \"ip14\", \"display\": \"6,1 inch Super Retina XDR OLED\", \"main_camera\": \"12MP|f1.5 (Wide), 12MP|f2.4 (Ultra Wide)\", \"selfie_camera\": \"12MP|f1.9 (Wide)\", \"chipset\": \"Apple A15 Bionic (5nm)\", \"ram\": \"6GB\", \"storage\": [ { \"size\": \"128GB\", \"price\": \"699$\" }, { \"size\": \"256GB\", \"price\": \"799$\" }, { \"size\": \"512GB\", \"price\": \"899$\" } ], \"color\": [ { \"color\": \"red\", \"hex\": \"#a6b9ca\" }, { \"color\": \"pink\", \"hex\": \"#e5ddea\" }, { \"color\": \"yellow\", \"hex\": \"#fff498\" }, { \"color\": \"black\", \"hex\": \"#323940\" } ], \"battery\": \"3,279mAH\", \"os\": \"IOS 16\", \"imagesource\": [ { \"color\": \"red\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14.png\" }, { \"color\": \"pink\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-p.png\" }, { \"color\": \"yellow\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-pr.png\" }, { \"color\": \"black\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-prm.png\" } ] }');
+('iPhone 14', 'iPhone', '{ \"id\": \"ip14\", \"display\": \"6,1 inch Super Retina XDR OLED\", \"main_camera\": \"12MP|f1.5 (Wide), 12MP|f2.4 (Ultra Wide)\", \"selfie_camera\": \"12MP|f1.9 (Wide)\", \"chipset\": \"Apple A15 Bionic (5nm)\", \"ram\": \"6GB\", \"storage\": [ { \"size\": \"128GB\", \"price\": \"699\" }, { \"size\": \"256GB\", \"price\": \"799\" }, { \"size\": \"512GB\", \"price\": \"899\" } ], \"color\": [ { \"color\": \"blue\", \"hex\": \"#a6b9ca\" }, { \"color\": \"pink\", \"hex\": \"#e5ddea\" }, { \"color\": \"yellow\", \"hex\": \"#fff498\" }, { \"color\": \"black\", \"hex\": \"#323940\" } ], \"battery\": \"3,279mAH\", \"os\": \"IOS 16\", \"imagesource\": [ { \"color\": \"blue\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14.png\" }, { \"color\": \"pink\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-p.png\" }, { \"color\": \"yellow\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-pr.png\" }, { \"color\": \"black\", \"source\": \"/baitaplon-final/img-files/products/ip14s/ip14-prm.png\" } ] }');
 
 -- --------------------------------------------------------
 
@@ -67,6 +79,12 @@ INSERT INTO `user` (`Username`, `Password`, `Type`, `Name`, `PhoneNumber`, `Emai
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bag`
+--
+ALTER TABLE `bag`
+  ADD PRIMARY KEY (`BagId`);
 
 --
 -- Indexes for table `product`
