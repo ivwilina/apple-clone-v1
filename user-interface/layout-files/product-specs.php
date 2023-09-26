@@ -23,8 +23,33 @@
             ?>
 
     </div>
-    
 
+    <section class="section1">
+        <div class="container-fluid">
+            <div class="title-product-name">
+                iPhone 14
+            </div>
+            <div class="main-selection">
+                <div class="product-image-container">
+                    
+                </div>
+                <div class="full-specs">
+
+                </div>
+            </div>
+        </div>
+        <div class="specs-selection">
+            <div class="color">
+
+            </div>
+            <div class="storage">
+
+            </div>
+        </div>
+        <div class="add-to-bag-button">
+            Add to bag
+        </div>
+    </section>
 
 
     <!-- <div class="footer-bar">
