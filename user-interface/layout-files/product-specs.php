@@ -1,6 +1,7 @@
 <?php
 
 // sửa lại đường dẫn đến file connection
+$nguoidung = "guest1";
 
 require_once './php-files/sql-connection.php';
 
@@ -13,8 +14,8 @@ $data = mysqli_query($connect, $sql_query);
 $r = mysqli_fetch_assoc($data);
 
 $obj = json_decode($r['Specs']);
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@ $obj = json_decode($r['Specs']);
 
     <section class="section1">
         <div class="container-fluid">
-            <div class="title-product-name">
+            <div class="title-product-name item-id">
                 <?php echo $r['ItemName'] ?>
             </div>
             <div class="product-display-specs">
@@ -162,7 +163,7 @@ $obj = json_decode($r['Specs']);
                         foreach ($obj->storage as $storage) {
                             ?>
                             <li>
-                                <div class="storage-selection" id="<?php echo $storage->size?>" onclick="selectStorage(this.id)">
+                                <div class="storage-selection" id="<?php echo $storage->size."$".$storage->price?>" onclick="selectStorage(this.id)">
                                     <div class="storage-size">
                                         <?php echo $storage->size ?>
                                     </div>
@@ -177,7 +178,7 @@ $obj = json_decode($r['Specs']);
                     </ul>
                 </div>
             </div>
-            <div class="add-to-bag-button-wrap">
+            <div class="add-to-bag-button-wrap" onclick="addToCart('<?php echo $nguoidung?>','<?php echo $obj->id?>')">
                 <div class="add-to-bag-button">
                     Add to bag
                 </div>
@@ -196,7 +197,9 @@ $obj = json_decode($r['Specs']);
 
     </div>
 
-    <script src="/baitaplon-final/user-interface/function-files/product-specs.js"></script>
+    <script src="/baitaplon-final/user-interface/function-files/product-specs.js">
+
+    </script>
 </body>
 
 </html>

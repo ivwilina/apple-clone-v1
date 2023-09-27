@@ -208,8 +208,9 @@ body {
 
 .inventory-list {
     width: 470px;
-    height: calc(100%-330px);
+    height: 470px;
     overflow: scroll;
+    border-radius: 13px;
 }
 
 .inventory-list::-webkit-scrollbar {
@@ -294,7 +295,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0px 5px 0px black;
+    border-radius: 13px;
 }
 
 .total {
