@@ -31,5 +31,5 @@ function selectStorage(id) {
     for (let i = 0; i < storage_choice.length; i++) {
         storage_choice[i].style.borderColor = "transparent";
       }
-  id.style.borderColor = "black";
+id.style.borderColor = "black";
 }
