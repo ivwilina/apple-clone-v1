@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,15 +19,20 @@
 </head>
 
 <body>
-    <!-- Navigation bar -->
+<!-- Navigation bar -->
     <div class="nav-wrapper">
+        <div class="store-logo">
+            <a href="./main-page.php">
+                <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
+                <p>
+                    Apple
+                    <br>
+                    Authorized Reseller
+                </p>
+            </a>
+        </div>
         <div class="nav-container">
             <ul class="nav">
-                <li>
-                    <a href="./main-page.php">
-                        <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
-                    </a>
-                </li>
                 <li>
                     <a href="#">
                         Mac
@@ -43,27 +53,25 @@
                         Watch
                     </a>
                 </li>
-                <li onclick="display_search()">
+                <li onmouseenter="display_search()">
                     <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
                 </li>
-                <li onclick="display_inventory()">
-                    <a href="#">
-                        <img src="/baitaplon-final/img-files/icons/inventory-icon.png" alt="Your Inventory">
-                    </a>
+                <li onmouseenter="display_inventory()">
+                    <img src="/baitaplon-final/img-files/icons/user-icon.png" alt="Your Inventory">
                 </li>
             </ul>
         </div>
     </div>
-
-
+    
+    
     <!-- Search dropdown -->
-    <div class="search-wrapper" id="search-dropdown">
+    <div class="search-wrapper" id="search-dropdown" onmouseleave="display_search()">
         <div class="search-container">
             <div class="search-bar" id="">
                 <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
-                <input type="text" placeholder="Search here">
+                <input type="text" placeholder="Nhập từ khoá">
             </div>
-            <span>Quick Links</span>
+            <span>Tìm kiếm nhanh</span>
             <ul class="quick-link">
                 <li>
                     <a href="#">
@@ -88,160 +96,59 @@
             </ul>
         </div>
     </div>
-
+    
 
     <!-- Inventory sidebar (non-logged) -->
-    <div class="inventory-wrapper" id="inventory-sidebar">
-        <div class="inventory-container">
-            <div class="inventory-content">
-                <div class="inventory-title01">Your bag is empty.</div>
-                <div class="request-login"><a href="./sign-in-page.php">Sign in</a> to see if you have any saved items
-                </div>
-            </div>
+    <div class="inventory-wrapper" id="inventory-sidebar" onmouseleave="display_inventory()">
+        <div class="inventory-container" id="inventory1">
+            <div class="inventory-title01"><a href="./sign-in-page.php">Đăng nhập</a> để xem thông tin cá nhân.</div>
         </div>
-        <div class="inventory-container-logged">
-            <div class="inventory-title">Your bag</div>
-            <div class="purchase-history">
-                <a href="#">View Purchase History</a>
-            </div>
-            <div class="inventory-list">
-                
-                <!-- php here -->
-                
-                <div class="inventory-item">
-                    <div class="select">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="inventory-item-img">
-                        <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                    </div>
-                    <div class="inventory-item-name">
-                       <div>iPhone 14</div>
-                    </div>
-                    <div class="inventory-item-spec">
-                        <div>
-                            <span>6GB</span>
-                        </div>
-                        <div>
-                            <span>128GB</span>
-                        </div>
-                    </div>
-                    <div class="inventory-item-price">
-                        <div>$</div>
-                        <div>799</div>
-                    </div>
-                </div>
-                <div class="inventory-item">
-                    <div class="select">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="inventory-item-img">
-                        <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                    </div>
-                    <div class="inventory-item-name">
-                       <div>iPhone 14</div>
-                    </div>
-                    <div class="inventory-item-spec">
-                        <div>
-                            <span>6GB</span>
-                        </div>
-                        <div>
-                            <span>128GB</span>
-                        </div>
-                    </div>
-                    <div class="inventory-item-price">
-                        <div>$</div>
-                        <div>799</div>
-                    </div>
-                </div>
-                <div class="inventory-item">
-                    <div class="select">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="inventory-item-img">
-                        <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                    </div>
-                    <div class="inventory-item-name">
-                       <div>iPhone 14</div>
-                    </div>
-                    <div class="inventory-item-spec">
-                        <div>
-                            <span>6GB</span>
-                        </div>
-                        <div>
-                            <span>128GB</span>
-                        </div>
-                    </div>
-                    <div class="inventory-item-price">
-                        <div>$</div>
-                        <div>799</div>
-                    </div>
-                </div>
-                <div class="inventory-item">
-                    <div class="select">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="inventory-item-img">
-                        <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                    </div>
-                    <div class="inventory-item-name">
-                       <div>iPhone 14</div>
-                    </div>
-                    <div class="inventory-item-spec">
-                        <div>
-                            <span>6GB</span>
-                        </div>
-                        <div>
-                            <span>128GB</span>
-                        </div>
-                    </div>
-                    <div class="inventory-item-price">
-                        <div>$</div>
-                        <div>799</div>
-                    </div>
-                </div>
-                <div class="inventory-item">
-                    <div class="select">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="inventory-item-img">
-                        <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="">
-                    </div>
-                    <div class="inventory-item-name">
-                       <div>iPhone 14</div>
-                    </div>
-                    <div class="inventory-item-spec">
-                        <div>
-                            <span>6GB</span>
-                        </div>
-                        <div>
-                            <span>128GB</span>
-                        </div>
-                    </div>
-                    <div class="inventory-item-price">
-                        <div>$</div>
-                        <div>799</div>
-                    </div>
-                </div>
-
-                <!-- end php -->
-            </div>
-            <div class="total-price">
-                <div class="total">
-                    Total: 1798$
-                </div>
-                <div class="check-out">
-                    Check Out(0)
+        <div class="inventory-container-logged" id="inventory2">
+            <div class="user-info">
+                <div>Xin chào!</div>
+                <div class="uname">
+                    <?php
+                    echo $_SESSION['User'];
+                    ?>
                 </div>
             </div>
+            <ul class="user-options">
+                <li>
+                    <a href="">
+                        <img src="/baitaplon-final/img-files/icons/inventory-icon.png" alt="Search">
+                        <p>Giỏ hàng</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="/baitaplon-final/img-files/icons/option-icon.png" alt="Search">
+                        <p>Cài đặt tài khoản</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="/baitaplon-final/img-files/icons/feedback-icon.png" alt="Search">
+                        <p>Phản hồi & đánh giá</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./php-files/logout-process.php?logout">
+                        <img src="/baitaplon-final/img-files/icons/logout-icon.png" alt="Search">
+                        <p>Đăng xuất</p>
+                    </a>
+                </li>
+            </ul>
         </div>
-
-
     </div>
-
-
-    <!-- Script link -->
+    </div>
     <script src="/baitaplon-final/user-interface/function-files/navbar-item-display.js"></script>
+    <?php
+    if (isset($_SESSION['User'])) {
+        echo '<script type="text/JavaScript">logged();</script>';
+    } else {
+        echo '<script type="text/JavaScript">non_logged();</script>';
+    }
+    ?>
 </body>
 
 </html>

@@ -74,6 +74,12 @@ body {
     z-index: 2;
 }
 
+.alert {
+    padding-top: 15px;
+    font-size: 17px;
+    color: red;
+}
+
 .sign-in-info {
     position: relative;
     border-bottom: 1px solid black;
@@ -84,7 +90,7 @@ body {
 .info-title {
     position: absolute;
     font-size: 21px;
-    font-weight: 300;
+    font-weight: 400;
     color: rgba(0, 0, 0, 1);
     top: 50%;
     left: 5px;
@@ -121,7 +127,7 @@ input:valid~label {
     text-decoration: none;
     color: rgba(0, 0, 0, 1);
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .forget a:hover {

@@ -31,12 +31,6 @@ function selectColor(id) {
   uid.classList.add("selectedColor");
 }
 function selectStorage(id) {
-<<<<<<< HEAD
-    for (let i = 0; i < storage_choice.length; i++) {
-        storage_choice[i].style.borderColor = "transparent";
-      }
-id.style.borderColor = "black";
-=======
   for (let i = 0; i < storage_choice.length; i++) {
     storage_choice[i].style.borderColor = "transparent";
     storage_choice[i].classList.remove("selectedStorage");
@@ -49,34 +43,32 @@ id.style.borderColor = "black";
 
 
 
-function getTime() {
-  var today = new Date();
-  var date =
-    today.getFullYear() + '' +(today.getMonth() + 1) + '' + today.getDate();
-  var time =
-    today.getHours() + '' + today.getMinutes() + '' +  today.getSeconds();
-  timestamp = date +''+ time;
-  return timestamp;
-}
+// function getTime() {
+//   var today = new Date();
+//   var date =
+//     today.getFullYear() + '' +(today.getMonth() + 1) + '' + today.getDate();
+//   var time =
+//     today.getHours() + '' + today.getMinutes() + '' +  today.getSeconds();
+//   timestamp = date +''+ time;
+//   return timestamp;
+// }
 
-var add_to_cart = document.getElementById("add-to-bag-button");
-var selectedColor = document.getElementsByClassName("selectedColor");
-var selectedStorage = document.getElementsByClassName("selectedStorage");
-var user, itemid;
-function addToCart(username,id) {
-  var bagAdd;
-  user = username;
-  itemi = id;
-  for (let i = 0; i < selectedColor.length; i++) {
-    console.log(selectedColor[i].id);
-  }
-  for (let i = 0; i < selectedStorage.length; i++) {
-    console.log(selectedStorage[i].id);
-  }
-  getTime();
-  console.log(username);
-  console.log(timestamp);
-  console.log(id);
-  console.log(id);
->>>>>>> 4945783f222754b48eabd16771e4764d3ce51a7a
-}
+// var add_to_cart = document.getElementById("add-to-bag-button");
+// var selectedColor = document.getElementsByClassName("selectedColor");
+// var selectedStorage = document.getElementsByClassName("selectedStorage");
+// var user, itemid;
+// function addToCart(username,id) {
+//   var bagAdd;
+//   user = username;
+//   itemi = id;
+//   for (let i = 0; i < selectedColor.length; i++) {
+//     console.log(selectedColor[i].id);
+//   }
+//   for (let i = 0; i < selectedStorage.length; i++) {
+//     console.log(selectedStorage[i].id);
+//   }
+//   getTime();
+//   console.log(username);
+//   console.log(timestamp);
+//   console.log(id);
+// }

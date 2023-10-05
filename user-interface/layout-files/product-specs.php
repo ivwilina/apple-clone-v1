@@ -1,11 +1,8 @@
 <?php
-
 // sửa lại đường dẫn đến file connection
-$nguoidung = "guest1";
-
 require_once './php-files/sql-connection.php';
 
-$product_request = "iPhone 14";
+$product_request = $_GET['request'];
 
 $sql_query = "SELECT * FROM product WHERE ItemName ='$product_request'";
 
@@ -76,12 +73,12 @@ $obj = json_decode($r['Specs']);
                     </div>
                 </div>
                 <div class="specs-wrap">
-                    <div class="specs-title">Specification</div>
+                    <div class="specs-title">Thông số kỹ thuật</div>
                     <div class="full-specs">
                         <ul>
                             <li>
                                 <div class="specs-name">
-                                    Display
+                                    Màn hình
                                 </div>
                                 <div class="spec-info">
                                     <?php echo $obj->display ?>
@@ -89,7 +86,7 @@ $obj = json_decode($r['Specs']);
                             </li>
                             <li>
                                 <div class="specs-name">
-                                    Main Camera
+                                    Camera sau
                                 </div>
                                 <div class="spec-info">
                                     <?php echo $obj->main_camera ?>
@@ -97,7 +94,7 @@ $obj = json_decode($r['Specs']);
                             </li>
                             <li>
                                 <div class="specs-name">
-                                    Selfie Camera
+                                    Camera trước
                                 </div>
                                 <div class="spec-info">
                                     <?php echo $obj->selfie_camera ?>
@@ -121,7 +118,7 @@ $obj = json_decode($r['Specs']);
                             </li>
                             <li>
                                 <div class="specs-name">
-                                    Battery
+                                    Pin
                                 </div>
                                 <div class="spec-info">
                                     <?php echo $obj->battery ?>
@@ -129,7 +126,7 @@ $obj = json_decode($r['Specs']);
                             </li>
                             <li>
                                 <div class="specs-name">
-                                    OS
+                                    Hệ điều hành
                                 </div>
                                 <div class="spec-info">
                                     <?php echo $obj->os ?>
@@ -141,12 +138,12 @@ $obj = json_decode($r['Specs']);
             </div>
             <div class="specs-selection">
                 <div class="color">
-                    <div class="title">Choose your favorite color.</div>
+                    <div class="title">Chọn màu sắc sản phẩm.</div>
                     <ul class="color-list">
                         <?php
                         foreach ($obj->color as $color) {
                             ?>
-                            <li class="color-selection" id="<?php echo $color->color?>" onclick="selectColor(this.id)">
+                            <li class="color-selection" id="<?php echo $color->color ?>" onclick="selectColor(this.id)">
                                 <div style="background-color: <?php echo $color->hex ?>">
                                     <?php echo $color->color ?>
                                 </div>
@@ -157,13 +154,14 @@ $obj = json_decode($r['Specs']);
                     </ul>
                 </div>
                 <div class="storage">
-                    <div class="title">Storage.</div>
+                    <div class="title">Cấu hình sản phẩm.</div>
                     <ul class="storage-list">
                         <?php
                         foreach ($obj->storage as $storage) {
                             ?>
                             <li>
-                                <div class="storage-selection" id="<?php echo $storage->size."$".$storage->price?>" onclick="selectStorage(this.id)">
+                                <div class="storage-selection" id="<?php echo $storage->size . "$" . $storage->price ?>"
+                                    onclick="selectStorage(this.id)">
                                     <div class="storage-size">
                                         <?php echo $storage->size ?>
                                     </div>
@@ -178,14 +176,22 @@ $obj = json_decode($r['Specs']);
                     </ul>
                 </div>
             </div>
-            <div class="add-to-bag-button-wrap" onclick="addToCart('<?php echo $nguoidung?>','<?php echo $obj->id?>')">
+            <div class="add-to-bag-button-wrap" onclick="">
                 <div class="add-to-bag-button">
-                    Add to bag
+                    <?php
+                    if(isset($_SESSION['User']))
+                    {
+                        echo 'Thêm vào giỏ hàng';
+                    }
+                    else
+                    {
+                        echo 'Đăng nhập để thêm vào giỏ hàng';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </section>
-
 
     <div class="footer-bar">
 

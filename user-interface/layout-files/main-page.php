@@ -37,7 +37,7 @@
             <div class="banner0">
                 <span id="product-ads">iPhone 15 Pro</span>
                 <img src="/baitaplon-final/img-files/products/product-comingsoon/ip15-banner.jpg" alt="iphone15-titanium-banner">
-                <span id="description">Coming Soon</span>
+                <span id="description">Sắp ra mắt</span>
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
                 <div class="link">
                     <span>Feel the Air</span>
                     <a href="#">
-                        Learn More >
+                        Tìm hiểu thêm >
                     </a>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                         iPhone 14
                     </span>
                     <span id="product-slogan">
-                        Wonderful.
+                        Tuyệt mỹ.
                     </span>
                 </div>
                 <ul class="banner2-list">
@@ -125,7 +125,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./product-specs.php?request=iPhone 14">
                             <img src="/baitaplon-final/img-files/products/ip14s/ip14.png" alt="iPhone-14">
                             <span class="product-name">
                                 14
@@ -182,7 +182,7 @@
                         Apple Watch Ultra 2
                     </span>
                     <span class="price">
-                        Coming Soon
+                        Sắp ra mắt
                     </span>
                     <img src="/baitaplon-final/img-files/products/watchs/watch-ultra2.jpg" alt="watch-ultra-2">
                 </div>

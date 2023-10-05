@@ -14,39 +14,52 @@
 </head>
 
 <body>
-    <form action="">
+    <form action="./php-files/login-process.php" method="post">
 
         <div class="navbar">
-            <?php 
+            <?php
             include_once './default-header.php';
             ?>
         </div>
-    
+
         <section>
 
             <div class="sign-in-wrapper">
                 <div class="sign-in-container">
                     <div class="sign-in-content">
                         <div class="sign-in-header">
-                            <span class="header-title">Sign in to Apple Store</span>
+                            <span class="header-title">Đăng nhập</span>
+                        </div>
+                        <?php
+                        if (isset($_GET['Invalid'])) {
+                            if ($_GET['Invalid'] == true) {
+                                ?>
+                                <div class="alert">
+                                    Tên đăng nhập hoặc mật khẩu không chính xác!
+                                </div>
+                                <?php
+                            }
+                        }
+
+                        ?>
+
+                        <div class="sign-in-info">
+                            <input type="text" name="username" required>
+                            <label class="info-title" id="title-username" title="Username">Tên đăng nhập</label>
                         </div>
                         <div class="sign-in-info">
-                            <input type="text" name="" required>
-                            <label class="info-title" id="title-username" title="Username">Username</label>
-                        </div>
-                        <div class="sign-in-info">
-                            <input type="password" name="" required>
-                            <label class="info-title" id="title-password" title="Password">Password</label>
+                            <input type="password" name="password" required>
+                            <label class="info-title" id="title-password" title="Password">Mật khẩu</label>
                         </div>
                         <div class="forget">
-                            <a href="#">Forget password?</a>
+                            <a href="#">Quên mật khẩu?</a>
                         </div>
                         <div class="sign-in-button">
-                            <button>Sign in</button>
+                            <button name="signin">Sign in</button>
                         </div>
                         <div class="register">
-                            <label for="">Don't have an accout?</label>
-                            <a href="#">Register</a>
+                            <label for="">Chưa có tài khoản?</label>
+                            <a href="#">Đăng ký</a>
                         </div>
                     </div>
                 </div>
