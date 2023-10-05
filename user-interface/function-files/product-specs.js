@@ -71,4 +71,5 @@ function addToCart(username,id) {
   console.log(username);
   console.log(timestamp);
   console.log(id);
+  console.log(id);
 }
