@@ -59,8 +59,8 @@ function addToCart(uname, id) {
   var username = uname;
   var bagAdd = "";
   var itemid = id;
-  bagAdd = bagAdd + username;
-  bagAdd = bagAdd + "^" + itemid;
+  getTime();
+  bagAdd = timestamp +"^"+ username +"^"+ itemid;
   for (let i = 0; i < selectedColor.length; i++) {
     console.log(selectedColor[i].id);
     bagAdd = bagAdd + "^" + selectedColor[i].id;
@@ -69,16 +69,19 @@ function addToCart(uname, id) {
     console.log(selectedStorage[i].id);
     bagAdd = bagAdd + "^" + selectedStorage[i].id;
   }
-  getTime();
-  bagAdd = bagAdd + "^" + timestamp;
   console.log(bagAdd);
 
   var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("t01").innerHTML = this.responseText;
+          document.getElementById("t01").innerHTML = "Đã thêm vào giỏ hàng";
         }
       };
-      xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/testadd.php?add="+bagAdd, true);
-      xmlhttp.send(bagAdd);
+      xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/add-to-cart.php?add="+bagAdd, true);
+      xmlhttp.send();
+
+      setTimeout(()=> {
+        document.getElementById("t01").innerHTML = "Thêm vào giỏ hàng";
+     }
+     ,3000);
 }

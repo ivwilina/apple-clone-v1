@@ -182,7 +182,7 @@ $obj = json_decode($r['Specs']);
                     if(isset($_SESSION['User']))
                     {
                         ?>
-                            <div class="add-to-bag-button" onclick="addToCart('<?php echo $_SESSION['User']?>','<?php echo $obj->id?>')" id="t01">
+                            <div class="add-to-bag-button" onclick="addToCart('<?php echo $_SESSION['User']?>','<?php echo $product_request?>')" id="t01">
                                 Thêm vào giỏ hàng
                             </div>
                         <?php

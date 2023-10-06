@@ -55,7 +55,7 @@
                             <a href="#">Quên mật khẩu?</a>
                         </div>
                         <div class="sign-in-button">
-                            <button name="signin">Sign in</button>
+                            <button name="signin">Đăng nhập</button>
                         </div>
                         <div class="register">
                             <label for="">Chưa có tài khoản?</label>

@@ -33,7 +33,7 @@
                     <span>Authorized Reseller</span>
                 </div>
                 <div class="about">
-                    <span class="footer-title">About Us</span>
+                    <span class="footer-title">Về Chúng Tôi</span>
                     <ul>
                         <li>Nguyễn Châu Anh</li>
                         <li>Bùi Sơn Dương</li>
@@ -42,7 +42,7 @@
                     </ul>
                 </div>
                 <div class="contact">
-                    <span class="footer-title">Contact</span>
+                    <span class="footer-title">Liên Hệ</span>
                     <div class="item">
                         <img src="/baitaplon-final/img-files/icons/address-icon.png" alt="address-icon">
                         <span>Minh Khai-Hai Ba Trung-Ha Noi-Viet Nam</span>

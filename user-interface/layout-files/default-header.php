@@ -22,18 +22,21 @@ session_start();
 <body>
 <!-- Navigation bar -->
     <div class="nav-wrapper">
-        <div class="store-logo">
-            <a href="./main-page.php">
-                <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
-                <p>
-                    Apple
-                    <br>
-                    Authorized Reseller
-                </p>
-            </a>
-        </div>
         <div class="nav-container">
+            <div class="store-logo">
+                <a href="./main-page.php">
+                    <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
+                    <p>
+                        Apple
+                        <br>
+                        Authorized Reseller
+                    </p>
+                </a>
+            </div>
             <ul class="nav">
+                <li>
+                    
+                </li>
                 <li>
                     <a href="#">
                         Mac
