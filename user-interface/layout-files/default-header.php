@@ -1,4 +1,5 @@
 <?php
+// session để check trạng thái đăng nhập, khai báo sesseion ở file login-process
 session_start();
 ?>
 
@@ -53,10 +54,10 @@ session_start();
                         Watch
                     </a>
                 </li>
-                <li onmouseenter="display_search()">
+                <li onmouseenter="display_search()"> <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
                     <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
                 </li>
-                <li onmouseenter="display_inventory()">
+                <li onmouseenter="display_inventory()"> <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
                     <img src="/baitaplon-final/img-files/icons/user-icon.png" alt="Your Inventory">
                 </li>
             </ul>
@@ -106,7 +107,7 @@ session_start();
         <div class="inventory-container-logged" id="inventory2">
             <div class="user-info">
                 <div>Xin chào!</div>
-                <div class="uname">
+                <div class="uname" id="uname"></div>
                     <?php
                     echo $_SESSION['User'];
                     ?>
@@ -143,10 +144,11 @@ session_start();
     </div>
     <script src="/baitaplon-final/user-interface/function-files/navbar-item-display.js"></script>
     <?php
+    // chuyển đổi trạng thái hiển thị của thẻ thông tin cá nhân tương ứng trạng thái đăng nhập
     if (isset($_SESSION['User'])) {
-        echo '<script type="text/JavaScript">logged();</script>';
+        echo '<script type="text/JavaScript">logged()</script>';
     } else {
-        echo '<script type="text/JavaScript">non_logged();</script>';
+        echo '<script type="text/JavaScript">non_logged()</script>';
     }
     ?>
 </body>

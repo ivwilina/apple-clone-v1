@@ -40,35 +40,45 @@ function selectStorage(id) {
   uid.classList.add("selectedStorage");
 }
 
+//thêm vào giỏ hàng tại database
+
+function getTime() {
+  var today = new Date();
+  var date =
+    today.getFullYear() + '/' +(today.getMonth() + 1) + '/' + today.getDate();
+  var time =
+    today.getHours() + ':' + today.getMinutes() + ':' +  today.getSeconds();
+  timestamp = date +'-'+ time;
+  return timestamp;
+}
 
 
+function addToCart(uname, id) {
+  var selectedColor = document.getElementsByClassName("selectedColor");
+  var selectedStorage = document.getElementsByClassName("selectedStorage");
+  var username = uname;
+  var bagAdd = "";
+  var itemid = id;
+  bagAdd = bagAdd + username;
+  bagAdd = bagAdd + "^" + itemid;
+  for (let i = 0; i < selectedColor.length; i++) {
+    console.log(selectedColor[i].id);
+    bagAdd = bagAdd + "^" + selectedColor[i].id;
+  }
+  for (let i = 0; i < selectedStorage.length; i++) {
+    console.log(selectedStorage[i].id);
+    bagAdd = bagAdd + "^" + selectedStorage[i].id;
+  }
+  getTime();
+  bagAdd = bagAdd + "^" + timestamp;
+  console.log(bagAdd);
 
-// function getTime() {
-//   var today = new Date();
-//   var date =
-//     today.getFullYear() + '' +(today.getMonth() + 1) + '' + today.getDate();
-//   var time =
-//     today.getHours() + '' + today.getMinutes() + '' +  today.getSeconds();
-//   timestamp = date +''+ time;
-//   return timestamp;
-// }
-
-// var add_to_cart = document.getElementById("add-to-bag-button");
-// var selectedColor = document.getElementsByClassName("selectedColor");
-// var selectedStorage = document.getElementsByClassName("selectedStorage");
-// var user, itemid;
-// function addToCart(username,id) {
-//   var bagAdd;
-//   user = username;
-//   itemi = id;
-//   for (let i = 0; i < selectedColor.length; i++) {
-//     console.log(selectedColor[i].id);
-//   }
-//   for (let i = 0; i < selectedStorage.length; i++) {
-//     console.log(selectedStorage[i].id);
-//   }
-//   getTime();
-//   console.log(username);
-//   console.log(timestamp);
-//   console.log(id);
-// }
+  var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("t01").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/testadd.php?add="+bagAdd, true);
+      xmlhttp.send(bagAdd);
+}

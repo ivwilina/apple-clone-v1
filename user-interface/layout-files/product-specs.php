@@ -30,6 +30,7 @@ $obj = json_decode($r['Specs']);
 </head>
 
 <body>
+
     <div class="navigation-bar">
 
         <?php
@@ -160,7 +161,7 @@ $obj = json_decode($r['Specs']);
                         foreach ($obj->storage as $storage) {
                             ?>
                             <li>
-                                <div class="storage-selection" id="<?php echo $storage->size . "$" . $storage->price ?>"
+                                <div class="storage-selection" id="<?php echo $storage->size . "^" . $storage->price ?>"
                                     onclick="selectStorage(this.id)">
                                     <div class="storage-size">
                                         <?php echo $storage->size ?>
@@ -176,22 +177,29 @@ $obj = json_decode($r['Specs']);
                     </ul>
                 </div>
             </div>
-            <div class="add-to-bag-button-wrap" onclick="">
-                <div class="add-to-bag-button">
-                    <?php
+            <div class="add-to-bag-button-wrap">
+                <?php 
                     if(isset($_SESSION['User']))
                     {
-                        echo 'Thêm vào giỏ hàng';
+                        ?>
+                            <div class="add-to-bag-button" onclick="addToCart('<?php echo $_SESSION['User']?>','<?php echo $obj->id?>')" id="t01">
+                                Thêm vào giỏ hàng
+                            </div>
+                        <?php
                     }
                     else
                     {
-                        echo 'Đăng nhập để thêm vào giỏ hàng';
+                        ?>
+                            <div class="add-to-bag-button">
+                                Đăng nhập để thêm vào giỏ hàng
+                            </div>
+                        <?php
                     }
-                    ?>
-                </div>
+                ?>
             </div>
         </div>
     </section>
+    <script src="/baitaplon-final/user-interface/function-files/product-specs.js"></script>
 
     <div class="footer-bar">
 
@@ -203,9 +211,8 @@ $obj = json_decode($r['Specs']);
 
     </div>
 
-    <script src="/baitaplon-final/user-interface/function-files/product-specs.js">
 
-    </script>
+
 </body>
 
 </html>
