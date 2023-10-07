@@ -14,27 +14,8 @@ body {
     justify-content: space-evenly;
 }
 
-.store-logo {
-    position: absolute;
-    left: 0;
-    transform: translateY(-10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.store-logo a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: rgba(255, 255, 255, .8);
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-.store-logo img {
-    padding: 0px 20px;
+.nav a img {
+    padding-right: 7px;
     height: 27px;
     filter: opacity(.8);
 }
@@ -52,11 +33,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-inline-start: 0px;
-    margin: 12px 0 12px 0;
+    margin: 0;
 }
 
 .nav img {
-    height: 20px;
+    height: 23px;
     filter: opacity(.8);
 }
 
@@ -75,6 +56,12 @@ body {
     align-items: center;
     justify-content: center;
     transition: .2s ease-in;
+}
+
+.nav li a p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    letter-spacing: 1px;
 }
 
 .nav img:hover,

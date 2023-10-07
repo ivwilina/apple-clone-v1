@@ -20,26 +20,30 @@ session_start();
 </head>
 
 <body>
-<!-- Navigation bar -->
+    <!-- Navigation bar -->
     <div class="nav-wrapper">
         <div class="nav-container">
-            <div class="store-logo">
-                <a href="./main-page.php">
-                    <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
-                    <p>
-                        Apple
-                        <br>
-                        Authorized Reseller
-                    </p>
-                </a>
-            </div>
             <ul class="nav">
                 <li>
-                    
+                    <!-- <div class="store-logo"> -->
+                        <a href="./main-page.php">
+                            <img src="/baitaplon-final/img-files/icons/apple-icon.png" alt="Main Page">
+                            <p>
+                                Apple
+                                <br>
+                                Authorized Reseller
+                            </p>
+                        </a>
+                    <!-- </div> -->
                 </li>
                 <li>
                     <a href="#">
-                        Mac
+                        Sản phẩm
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Macbook
                     </a>
                 </li>
                 <li>
@@ -57,17 +61,19 @@ session_start();
                         Watch
                     </a>
                 </li>
-                <li onmouseenter="display_search()"> <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
+                <li onmouseenter="display_search()">
+                    <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
                     <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
                 </li>
-                <li onmouseenter="display_inventory()"> <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
+                <li onmouseenter="display_inventory()">
+                    <!-- Ẩn hiện thanh tìm kiếm và thẻ thông tin cá nhân bằng JavaScript -->
                     <img src="/baitaplon-final/img-files/icons/user-icon.png" alt="Your Inventory">
                 </li>
             </ul>
         </div>
     </div>
-    
-    
+
+
     <!-- Search dropdown -->
     <div class="search-wrapper" id="search-dropdown" onmouseleave="display_search()">
         <div class="search-container">
@@ -94,13 +100,13 @@ session_start();
                 </li>
                 <li>
                     <a href="#">
-                        ➝ Mac
+                        ➝ Macbook
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    
+
 
     <!-- Inventory sidebar (non-logged) -->
     <div class="inventory-wrapper" id="inventory-sidebar" onmouseleave="display_inventory()">
@@ -111,38 +117,38 @@ session_start();
             <div class="user-info">
                 <div>Xin chào!</div>
                 <div class="uname" id="uname"></div>
-                    <?php
-                    echo $_SESSION['User'];
-                    ?>
-                </div>
+                <?php
+                echo $_SESSION['User'];
+                ?>
             </div>
-            <ul class="user-options">
-                <li>
-                    <a href="">
-                        <img src="/baitaplon-final/img-files/icons/inventory-icon.png" alt="Search">
-                        <p>Giỏ hàng</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="/baitaplon-final/img-files/icons/option-icon.png" alt="Search">
-                        <p>Cài đặt tài khoản</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="/baitaplon-final/img-files/icons/feedback-icon.png" alt="Search">
-                        <p>Phản hồi & đánh giá</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./php-files/logout-process.php?logout">
-                        <img src="/baitaplon-final/img-files/icons/logout-icon.png" alt="Search">
-                        <p>Đăng xuất</p>
-                    </a>
-                </li>
-            </ul>
         </div>
+        <ul class="user-options">
+            <li>
+                <a href="">
+                    <img src="/baitaplon-final/img-files/icons/inventory-icon.png" alt="Search">
+                    <p>Giỏ hàng</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="/baitaplon-final/img-files/icons/option-icon.png" alt="Search">
+                    <p>Cài đặt tài khoản</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="/baitaplon-final/img-files/icons/feedback-icon.png" alt="Search">
+                    <p>Phản hồi & đánh giá</p>
+                </a>
+            </li>
+            <li>
+                <a href="./php-files/logout-process.php?logout">
+                    <img src="/baitaplon-final/img-files/icons/logout-icon.png" alt="Search">
+                    <p>Đăng xuất</p>
+                </a>
+            </li>
+        </ul>
+    </div>
     </div>
     </div>
     <script src="/baitaplon-final/user-interface/function-files/navbar-item-display.js"></script>
