@@ -182,7 +182,6 @@ body {
 .banner2 .banner2-list img {
     max-height: 256px;
     padding-bottom: 15px;
-    border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .banner2 .banner2-list li {
@@ -190,11 +189,12 @@ body {
     border: 2px solid transparent;
     padding: 15px 5px;
     border-radius: 23px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all .2s ease-out;
 }
 
 .banner2 .banner2-list li:hover {
-    border-color: rgba(0, 0, 0, 1);
+    box-shadow: rgba(101, 222, 255, 1) 0px 5px 15px;
     transition: all .2s ease-out;
 }
 
