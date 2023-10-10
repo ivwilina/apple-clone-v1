@@ -11,15 +11,22 @@
     {
         $query = "select * from user where Username='$username'and Password='$password'";
         $result = mysqli_query($connect,$query);
-        if(mysqli_fetch_assoc($result))
+        $data = mysqli_fetch_assoc($result);
+        if($data)
         {
-            $_SESSION['User'] = $username;
-            header("location:/baitaplon-final/user-interface/layout-files/main-page.php?");
+            if($data['Type']=="customer"){
+                $_SESSION['User'] = $data['Name'];
+                header("location:/baitaplon-final/user-interface/layout-files/main-page.php?");
+            }
+            if($data['Type']=="admin"){
+                $_SESSION['Admin'] = $data['Name'];
+                header("location:/baitaplon-final/user-interface/layout-files/admin-page-1.php?");
+            }
+            
         }
         else
         {
             header("location:/baitaplon-final/user-interface/layout-files/sign-in-page.php?Invalid=wrongpass");
-
         }
     }
     else 

@@ -1,0 +1,47 @@
+{
+  "id": "ip14",
+  "information": [
+    { "infoname":"Màn hình", "detail":"6,1 inch Super Retina XDR OLED" },
+    { "infoname":"Camera sau", "detail":"12MP|f1.5 (Wide), 12MP|f2.4 (Ultra Wide)" },
+    { "infoname":"Camera trước", "detail":"12MP|f1.9 (Wide)" },
+    { "infoname":"Chipset", "detail":"Apple A15 Bionic (5nm)" },
+    { "infoname":"Ram", "detail":"6GB" },
+    { "infoname":"Rom", "detail":"128GB-512GB" },
+    { "infoname":"Pin", "detail":"3,279mAH" },
+    { "infoname":"Hệ điều hành", "detail":"IOS 16" }
+  ],
+  "choice": [
+    { "size": "128GB", "price": "18790000" },
+    { "size": "256GB", "price": "21790000" },
+    { "size": "512GB", "price": "24790000" }
+  ],
+  "color": [
+    { "color": "Đỏ", "hex": "red" },
+    { "color": "Xanh", "hex": "#a6b9ca" },
+    { "color": "Trắng", "hex": "white" },
+    { "color": "Vàng", "hex": "#fff498" },
+    { "color": "Đen", "hex": "#323940" }
+  ],
+  "imagesource": [
+    {
+      "color": "Đen",
+      "source": "/baitaplon-final/databases/product-img-data/iphone/ip14-black.jpg"
+    },
+    {
+      "color": "Xanh",
+      "source": "/baitaplon-final/databases/product-img-data/iphone/ip14-blue.jpg"
+    },
+    {
+      "color": "Đỏ",
+      "source": "/baitaplon-final/databases/product-img-data/iphone/ip14-red.jpg"
+    },
+    {
+      "color": "Trắng",
+      "source": "/baitaplon-final/databases/product-img-data/iphone/ip14-white.jpg"
+    },
+    {
+      "color": "Vàng",
+      "source": "/baitaplon-final/databases/product-img-data/iphone/ip14-yellow.webp"
+    }
+  ]
+}

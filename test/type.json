@@ -1,0 +1,27 @@
+
+{
+    "productName":[
+        {"database":"id"},
+        {"vie":"Tên sản phẩm"}
+    ],
+    "productID":[
+        {"database":"id"},
+        {"vie":"ID Sản phẩm"}
+    ],
+    "productSpecs":[
+        {"database":"infomation"},
+        {"vie":"Thông số kỹ thuật"}
+    ],
+    "productChoice":[
+        {"database":"choice"},
+        {"vie":"Cấu hình khả dụng"}
+    ],
+    "productColor":[
+        {"database":"color"},
+        {"vie":"Màu sắc sản phẩm"}
+    ],
+    "productImageSource":[
+        {"database":"imagesource"},
+        {"vie":"Hình ảnh sản phẩm"}
+    ]
+}

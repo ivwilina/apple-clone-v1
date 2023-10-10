@@ -77,62 +77,20 @@ $obj = json_decode($r['Specs']);
                     <div class="specs-title">Thông số kỹ thuật</div>
                     <div class="full-specs">
                         <ul>
-                            <li>
-                                <div class="specs-name">
-                                    Màn hình
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->display ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Camera sau
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->main_camera ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Camera trước
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->selfie_camera ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Chipset
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->chipset ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Ram
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->ram ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Pin
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->battery ?>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="specs-name">
-                                    Hệ điều hành
-                                </div>
-                                <div class="spec-info">
-                                    <?php echo $obj->os ?>
-                                </div>
-                            </li>
+                            <?php
+                            foreach ($obj->information as $info) {
+                                ?>
+                                <li>
+                                    <div class="specs-name">
+                                        <?php echo $info->infoname ?>
+                                    </div>
+                                    <div class="spec-info">
+                                        <?php echo $info->detail ?>
+                                    </div>
+                                </li>
+                                <?php
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -158,16 +116,16 @@ $obj = json_decode($r['Specs']);
                     <div class="title">Cấu hình sản phẩm.</div>
                     <ul class="storage-list">
                         <?php
-                        foreach ($obj->storage as $storage) {
+                        foreach ($obj->choice as $choice) {
                             ?>
                             <li>
-                                <div class="storage-selection" id="<?php echo $storage->size . "^" . $storage->price ?>"
+                                <div class="storage-selection" id="<?php echo $choice->size . "^" . $choice->price ?>"
                                     onclick="selectStorage(this.id)">
                                     <div class="storage-size">
-                                        <?php echo $storage->size ?>
+                                        <?php echo $choice->size ?>
                                     </div>
                                     <div class="storage-price">
-                                        <?php echo $storage->price ?>$
+                                        <?php echo $choice->price ?><sup>đ</sup>
                                     </div>
                                 </div>
                             </li>
@@ -178,23 +136,21 @@ $obj = json_decode($r['Specs']);
                 </div>
             </div>
             <div class="add-to-bag-button-wrap">
-                <?php 
-                    if(isset($_SESSION['User']))
-                    {
-                        ?>
-                            <div class="add-to-bag-button" onclick="addToCart('<?php echo $_SESSION['User']?>','<?php echo $product_request?>')" id="t01">
-                                Thêm vào giỏ hàng
-                            </div>
-                        <?php
-                    }
-                    else
-                    {
-                        ?>
-                            <div class="add-to-bag-button">
-                                Đăng nhập để thêm vào giỏ hàng
-                            </div>
-                        <?php
-                    }
+                <?php
+                if (isset($_SESSION['User'])) {
+                    ?>
+                    <div class="add-to-bag-button"
+                        onclick="addToCart('<?php echo $_SESSION['User'] ?>','<?php echo $product_request ?>')" id="t01">
+                        Thêm vào giỏ hàng
+                    </div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="add-to-bag-button">
+                        Đăng nhập để thêm vào giỏ hàng
+                    </div>
+                    <?php
+                }
                 ?>
             </div>
         </div>

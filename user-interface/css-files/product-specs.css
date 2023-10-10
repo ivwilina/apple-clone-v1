@@ -69,6 +69,10 @@ body {
   justify-content: center;
 }
 
+.slider-item > img {
+  width: 400px;
+}
+
 #first {
   margin-left: -20%;
 }
