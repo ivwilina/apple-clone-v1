@@ -22,7 +22,7 @@ body {
 .section-title {
     font-size: 33px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .select-product {
@@ -72,9 +72,94 @@ body {
     padding: 5px 8px;
 }
 
-.list-view a {
+.list-view .option {
     padding-right: 15px;
     color: #006aff;
 }
 
+.infomation-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.infomation-content {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px 0px;
+    gap: 15px;
+}
+
+.infomation-content li {
+    display: flex;
+    font-size: 17px;
+    gap: 30px;
+}
+
+.table-list {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px;
+}
+
+.table-list input {
+    width: 96%;
+    font-size: 17px;
+}
+
+.ic-name {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.ic-content {
+    color: #006aff;
+}
+
+#button-update {
+    width: 150px;
+    height: 50px;
+    font-size: 21px;
+    border: 1px solid black;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-update:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.row-option {
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: normal;
+    color: #006aff;
+    margin-left: 15px;
+}
+
+#button-add {
+    width: 150px;
+    height: 50px;
+    font-size: 21px;
+    border: 1px solid black;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-add:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+}

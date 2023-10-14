@@ -1,6 +1,6 @@
 <?php
 
-include_once 'php-files/admin-product.php';
+include_once 'php-files/admin-onload.php';
 
 ?>
 
@@ -71,12 +71,13 @@ include_once 'php-files/admin-product.php';
                                     <?php echo $data_all_product['ItemName'] ?>
                                 </td>
                                 <td>
-                                    <a href="">
+                                    <div class="option" id="<?php echo $data_all_product['ItemName'] ?>"
+                                        onclick="selectItemToUpdate(this.id)">
                                         Chỉnh sửa
-                                    </a>
-                                    <a href="">
+                                    </div>
+                                    <div class="option">
                                         Xoá
-                                    </a>
+                                    </div>
                                 </td>
                             </tr>
                             <?php
@@ -94,49 +95,8 @@ include_once 'php-files/admin-product.php';
         <div class="section-wrapper">
             <div class="section-container">
                 <div class="section-title">Thông tin sản phẩm</div>
-                <div class="infomation-list">
-                    <ul class="infomation-content">
-                        <li>
-                            <div class="ic-name">
-                                Tên sản phẩm
-                            </div>
-                            <div class="ic-content">
-                                <?php echo $r['ItemName'] ?>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ic-name">
-                                ID sản phẩm
-                            </div>
-                            <div class="ic-content">
-                                <?php echo $json_data->id ?>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ic-name">
-                                Thông số kỹ thuật
-                            </div>
-                            <div class="ic-content">
-                                <table>
-                                    <?php
-                                    foreach ($json_data->information as $info) {
-                                        ?>
-                                        <tr>
-                                            <td>
-                                                <input title="none" type="text" name="spec-infoname" id="" value="<?php echo $info->infoname ?>">
-                                            </td>
-                                            <td>
-                                                <input title="none" type="text" name="spec-infodetail" id="" value="<?php echo $info->detail ?>">
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                    ?>
-                                </table>
-                            </div>
-                        </li>
-                    </ul>
-                    <div id="button-add" onclick="testUpdate()">Cập nhật</div>
+                <div class="infomation-list" id="infomation-list">
+                    Hãy chọn sản phẩm cần chỉnh sửa
                 </div>
             </div>
         </div>
@@ -145,7 +105,139 @@ include_once 'php-files/admin-product.php';
 
     <!-- thêm mới sản phẩm -->
     <section class="add-product">
+        <div class="section-wrapper">
+            <div class="section-container">
+                <div class="section-title">Thêm mới sản phẩm</div>
+                <ul class="infomation-content">
+                    <li>
+                        <div class="ic-name">
+                            Tên sản phẩm:
+                        </div>
+                        <div class="ic-content"></div>
+                    </li>
+                    <li>
+                        <div class="ic-name">
+                            ID sản phẩm:
+                        </div>
+                        <div class="ic-content"></div>
+                    </li>
+                    <li class="table-list">
+                        <table class="list-view" id="table-1a">
+                            <tr>
+                                <th colspan=2>
+                                    Thông số kĩ thuật
+                                    <span class="row-option" id="a-1a" onclick="addRows2(this.id)">Thêm dòng</span>
+                                    <span class="row-option" id="d-1a" onclick="delRow2(this.id)">Xoá dòng</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th width="20%">
+                                    Tên thông số
+                                </th>
+                                <th width="80%">
+                                    Chi tiết
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-infoname" id="" value="">
+                                </td>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-infodetail" id="" value="">
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
 
+                    <li class="table-list">
+                        <table class="list-view" id="table-2a">
+                            <tr>
+                                <th colspan=2>
+                                    Cấu hình khả dụng
+                                    <span class="row-option" id="a-2a" onclick="addRows2(this.id)">Thêm dòng</span>
+                                    <span class="row-option" id="d-2a" onclick="delRow2(this.id)">Xoá dòng</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th width="20%">
+                                    Cấu hình
+                                </th>
+                                <th width="80%">
+                                    Giá (đồng)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-choicesize" id="" value="">
+                                </td>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-choiceprice" id="" value="">
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li class="table-list">
+                        <table class="list-view" id="table-3a">
+                            <tr>
+                                <th colspan=2>
+                                    Màu sắc khả dụng
+                                    <span class="row-option" id="a-3a" onclick="addRows2(this.id)">Thêm dòng</span>
+                                    <span class="row-option" id="d-3a" onclick="delRow2(this.id)">Xoá dòng</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th width="20%">
+                                    Màu sắc
+                                </th>
+                                <th width="80%">
+                                    Mã màu hiển thị
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-colorcolor" id="" value="">
+                                </td>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-colorhex" id="" value="">
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li class="table-list">
+                        <table class="list-view" id="table-4a">
+                            <tr>
+                                <th colspan=2>
+                                    Ảnh sản phẩm
+                                    <span class="row-option" id="a-4a" onclick="addRows2(this.id)">Thêm dòng</span>
+                                    <span class="row-option" id="d-4a" onclick="delRow2(this.id)">Xoá dòng</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th width="20%">
+                                    Màu sắc
+                                </th>
+                                <th width="80%">
+                                    Nguồn
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-sourcecolor" id="" value="">
+                                </td>
+                                <td>
+                                    <input title="none" type="text" name="a-spec-sourcepath" id="" value="">
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <div id="button-add" onclick="">Thêm mới</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <script src="/baitaplon-final/user-interface/function-files/admin-page-1.js"></script>

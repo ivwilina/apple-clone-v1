@@ -1,26 +1,43 @@
 <?php
 
-require_once 'E:\xampp\htdocs\baitaplon-final\user-interface\php-files\sql-connection.php';
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'baitaplon-final-test02';
 
-$product_request = "iPhone 14";
 
-$sql_query = "SELECT * FROM product WHERE ItemName ='$product_request'";
+$connect = mysqli_connect($servername,$username,$password,$database);
 
-$data = mysqli_query($connect, $sql_query);
+if($connect->connect_error) {
+    die("Connection Failed" .$connect->connect_error);
+}
 
-$r = mysqli_fetch_assoc($data);
 
-echo $r['Specs'];
+$selecteditem = 'iPhone 14';
 
-$obj = json_decode($r['Specs']);
+$query_selected_product = "SELECT * FROM product where ItemName = '$selecteditem'";
 
-echo $obj->chipset;
+$get_selected_product = mysqli_query($connect, $query_selected_product);
 
-// $color = json_decode($obj->Color);
+$data_selected = mysqli_fetch_assoc($get_selected_product);
 
-// echo $color;
+$json_data = json_decode($data_selected['Specs']);
 
-foreach($obj->color as $color) {
-    echo $color->hex;
+echo $data_selected['ItemName'] . "<br>";
+
+foreach ($json_data->information as $info) {
+    echo $info->infoname . ' : ' . $info->detail . "<br>";
+}
+echo "<br>";
+foreach ($json_data->choice as $choice) {
+    echo $choice->size . ' : ' . $choice->price . "<br>";
+}
+echo "<br>";
+foreach ($json_data->color as $color) {
+    echo $color->color . ' : ' . $color->hex . "<br>";
+}
+echo "<br>";
+foreach ($json_data->imagesource as $source) {
+    echo $source->color . ' : ' .  $source->source . "<br>";
 }
 ?>
