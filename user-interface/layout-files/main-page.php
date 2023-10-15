@@ -62,7 +62,7 @@
                 </div>
                 <div class="link">
                     <span>Feel the Air</span>
-                    <a href="#">
+                    <a href="./product-specs.php?request=iPad Air">
                         Tìm hiểu thêm >
                     </a>
                 </div>
@@ -83,7 +83,7 @@
                 </div>
                 <ul class="banner2-list">
                     <li>
-                        <a href="#">
+                        <a href="./product-specs.php?request=iPhone 14 Pro Max">
                             <img src="/baitaplon-final/img-files/products/ip14s/ip14-prm.png" alt="iPhone-14-pro-max">
                             <span class="product-name">
                                 Pro Max
@@ -97,7 +97,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./product-specs.php?request=iPhone 14 Pro">
                             <img src="/baitaplon-final/img-files/products/ip14s/ip14-pr.png" alt="iPhone-14-pro">
                             <span class="product-name">
                                 Pro
@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./product-specs.php?request=iPhone 14 Plus">
                             <img src="/baitaplon-final/img-files/products/ip14s/ip14-p.png" alt="iPhone-14-plus">
                             <span class="product-name">
                                 Plus
