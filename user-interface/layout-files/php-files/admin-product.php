@@ -33,7 +33,7 @@
             <div class="option" id="' . $data_all_product['ItemName'] . '" onclick="selectItemToUpdate(this.id)">
                 Chỉnh sửa
             </div>
-            <div class="option">
+            <div class="option" id="' . $data_all_product['ItemName'] . '" onclick="deleteItem('. $data_all_product['ItemName'] .', '. $data_all_product['ItemType'].')">
                 Xoá
             </div>
         </td>';
@@ -58,13 +58,19 @@
                     <div class="ic-name">
                         Tên sản phẩm:
                     </div>';
-        echo '<div class="ic-content">' . $data_selected['ItemName'] . '</div>';
+        echo '<div class="ic-content" id="update-itemname">' . $data_selected['ItemName'] . '</div>';
         echo '</li>
                 <li>
                     <div class="ic-name">
                         ID sản phẩm:
                     </div>';
-        echo        '<div class="ic-content">' . $json_data->id .'</div>';
+        echo '<div class="ic-content" id="update-itemid">' . $json_data->id .'</div>';
+        echo '</li>
+                <li>
+                    <div class="ic-name">
+                        Loại sản phẩm:
+                    </div>';
+        echo '<div class="ic-content" id="update-itemtype">' . $data_selected['ItemType'] .'</div>';
         echo '</li>';
         echo    '<li class="table-list">
             <table class="list-view" id="table-1">';

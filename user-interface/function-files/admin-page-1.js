@@ -16,6 +16,11 @@ function selectItemList() {
 
 
 function testUpdate() {
+  
+  var ItemName = document.getElementById('update-itemname').innerHTML;
+  var ItemId = document.getElementById('update-itemid').innerHTML;
+  var ItemType = document.getElementById('update-itemtype').innerHTML;
+
   var stringTest="";
 
   //specification
@@ -109,8 +114,155 @@ function testUpdate() {
   }
   
   console.log(stringTest);
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      alert('Cập nhật sản phẩm thành công')
+      document.getElementById('infomation-list').innerHTML = this.responseText;
+    }
+  };
+
+  xmlhttp.open("GET","/baitaplon-final/user-interface/layout-files/php-files/product-update.php?updateItemname=" + ItemName + "&updateItemType=" + ItemType + "&updateItemid=" + ItemId + "&info=" + stringTest);
+
+  xmlhttp.send();
 }
 
+
+function testAdd() {
+  
+  var ItemNameBox = document.getElementById('add-itemname');
+  var ItemIdBox = document.getElementById('add-itemid');
+  var ItemTypeBox = document.getElementById('add-itemtype');
+
+  var ItemName = ItemNameBox.value;
+  var ItemId = ItemIdBox.value;
+  var ItemType = ItemTypeBox.value;
+
+  var stringTest="";
+
+  //specification
+  var infoname=[];
+  var infodetail=[];
+  var spec_infoname = document.getElementsByName('a-spec-infoname');
+  var spec_infodetail = document.getElementsByName('a-spec-infodetail');
+  spec_infoname.forEach((line) => {
+    infoname.push(line.value);
+  });
+  spec_infodetail.forEach((line) => {
+    infodetail.push(line.value);
+  });
+  for (let i = 0; i < infoname.length; i++) {
+    if(i==0) {
+      stringTest = stringTest + infoname[i] + "$" + infodetail[i];
+    }
+    else
+    {
+      stringTest = stringTest + "^" + infoname[i] + "$" + infodetail[i];
+    }
+  }
+
+  stringTest += '|';
+
+  //available choice
+  var choicesize=[];
+  var choiceprice=[];
+  var spec_choicesize = document.getElementsByName('a-spec-choicesize');
+  var spec_choiceprice = document.getElementsByName('a-spec-choiceprice');
+  spec_choicesize.forEach((line) =>{
+    choicesize.push(line.value);
+  })
+  spec_choiceprice.forEach((line) =>{
+    choiceprice.push(line.value);
+  })
+  for (let i = 0; i < choicesize.length; i++) {
+    if(i==0) {
+      stringTest = stringTest + choicesize[i] + "$" + choiceprice[i];
+    }
+    else
+    {
+      stringTest = stringTest + "^" + choicesize[i] + "$" + choiceprice[i];
+    }
+  }
+
+  stringTest += '|';
+  
+  //available color
+  var colorcolor=[];
+  var colorhex=[];
+  var spec_colorcolor = document.getElementsByName('a-spec-colorcolor');
+  var spec_colorhex = document.getElementsByName('a-spec-colorhex');
+  spec_colorcolor.forEach((line) =>{
+    colorcolor.push(line.value);
+  })
+  spec_colorhex.forEach((line) =>{
+    colorhex.push(line.value);
+  })
+  for (let i = 0; i < colorcolor.length; i++) {
+    if(i==0) {
+      stringTest = stringTest + colorcolor[i] + "$" + colorhex[i];
+    }
+    else
+    {
+      stringTest = stringTest + "^" + colorcolor[i] + "$" + colorhex[i];
+    }
+  }
+
+  stringTest += '|';
+
+  //image source
+  var sourcecolor=[];
+  var sourcepath=[];
+  var spec_sourcecolor = document.getElementsByName('a-spec-sourcecolor');
+  var spec_sourcepath = document.getElementsByName('a-spec-sourcepath');
+  spec_sourcecolor.forEach((line) =>{
+    sourcecolor.push(line.value);
+  })
+  spec_sourcepath.forEach((line) =>{
+    sourcepath.push(line.value);
+  })
+  for (let i = 0; i < sourcecolor.length; i++) {
+    if(i==0) {
+      stringTest = stringTest + sourcecolor[i] + "$" + sourcepath[i];
+    }
+    else
+    {
+      stringTest = stringTest + "^" + sourcecolor[i] + "$" + sourcepath[i];
+    }
+  }
+  
+  console.log(stringTest);
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      alert('Thêm sản phẩm thành công')
+      document.getElementById('add-content').innerHTML = this.responseText;
+
+    }
+  };
+
+  xmlhttp.open("GET","/baitaplon-final/user-interface/layout-files/php-files/product-add.php?addItemname=" + ItemName + "&addItemType=" + ItemType + "&addItemid=" + ItemId + "&info=" + stringTest);
+
+  xmlhttp.send();
+}
+
+function deleteItem(ItemName, ItemType){
+  var itemToDelete = ItemName;
+  var itemType = ItemType;
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("table-list").innerHTML = this.responseText;
+      alert('Xoá thành công');
+    }
+  };
+
+  xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/product-delete.php?itemtodelete=" + itemToDelete + "&itemtype=" + itemType, true);
+
+  xmlhttp.send(); 
+}
 
 function selectItemToUpdate(itemName) {
   var selected_item_toupdate = itemName;

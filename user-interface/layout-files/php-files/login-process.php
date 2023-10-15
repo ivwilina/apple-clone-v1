@@ -2,19 +2,19 @@
 
     require_once 'sql-connection.php';
 
-    session_start();
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
+    
+    
     if(isset($_POST['signin'])) 
     {
+        session_start();
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         $query = "select * from user where Username='$username'and Password='$password'";
         $result = mysqli_query($connect,$query);
         $data = mysqli_fetch_assoc($result);
         if($data)
         {
-            if($data['Type']=="customer"){
+            if($data['Type']=="user"){
                 $_SESSION['User'] = $data['Name'];
                 header("location:/baitaplon-final/user-interface/layout-files/main-page.php?");
             }
@@ -28,6 +28,19 @@
         {
             header("location:/baitaplon-final/user-interface/layout-files/sign-in-page.php?Invalid=wrongpass");
         }
+    }
+    if(isset($_POST['signup']))
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $name = $_POST['name'];
+        $tel = $_POST['phonenumber'];
+        $mail = $_POST['emailaddress'];
+        $address = $_POST['address'];
+        $type = "user";
+        $query_signup = "INSERT INTO user VALUES ('$username','$password','$type','$name','$tel','$mail','$address')";
+        mysqli_query($connect,$query_signup);
+        header("location:/baitaplon-final/user-interface/layout-files/sign-in-page.php?");
     }
     else 
     {

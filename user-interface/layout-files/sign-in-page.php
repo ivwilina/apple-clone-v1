@@ -14,58 +14,79 @@
 </head>
 
 <body>
-    <form action="./php-files/login-process.php" method="post">
-
-        <div class="navbar">
-            <?php
+    
+    <div class="navbar">
+        <?php
             include_once './default-header.php';
             ?>
         </div>
-
+        
         <section>
-
-            <div class="sign-in-wrapper">
-                <div class="sign-in-container">
-                    <div class="sign-in-content">
-                        <div class="sign-in-header">
-                            <span class="header-title">Đăng nhập</span>
-                        </div>
-                        <?php
-                        if (isset($_GET['Invalid'])) {
-                            if ($_GET['Invalid'] == true) {
-                                ?>
-                                <div class="alert">
-                                    Tên đăng nhập hoặc mật khẩu không chính xác!
-                                </div>
-                                <?php
+            <div class="all-container" id="main">
+                <div class="sign-up">
+                    <form action="/baitaplon-final/user-interface/layout-files/php-files/login-process.php" method="POST">
+                        <h1>Tạo Tài Khoản</h1>
+                        <input type="text" name="username" placeholder="Tên đăng nhập" required="">
+                        <input type="password" name="password" placeholder="Mật khẩu" required="">
+                        <input type="text" name="name" placeholder="Tên người dùng" required="">
+                        <input type="tel" name="phonenumber" placeholder="0123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required="">
+                        <input type="email" name="emailaddress" placeholder="Email" required="">
+                        <input type="text" name="address" placeholder="Địa chỉ" required="">
+                        <button name="signup">Tạo tài khoản</button>
+                    </form>
+                </div>
+    
+                <div class="sign-in">
+                    <form action="/baitaplon-final/user-interface/layout-files/php-files/login-process.php" method="POST">
+                        <h1>Đăng nhập</h1>
+                            <?php
+                            if (isset($_GET['Invalid'])) {
+                                if ($_GET['Invalid'] == true) {
+                                    ?>
+                                    <div class="alert">
+                                        Tên đăng nhập hoặc mật khẩu không chính xác!
+                                    </div>
+                                    <?php
+                                }
                             }
-                        }
 
-                        ?>
+                            ?>
+                        <input type="text" name="username" placeholder="Tên đăng nhập" required="">
+                        <input type="password" name="password" placeholder="Mật khẩu" required="">
+                        <a href="#">Quên mật khẩu?</a>
+                        <button name="signin">Đăng nhập</button>
+                    </form>
+                </div>
 
-                        <div class="sign-in-info">
-                            <input type="text" name="username" required>
-                            <label class="info-title" id="title-username" title="Username">Tên đăng nhập</label>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-left">
+                            <h1>Apple Authorized Store</h1>
+                            <p>Chào mừng quay trở lại, đăng nhập để tiếp tục trải nghiệm mua sắm nào!</p>
+                            <button id="signIn">Đăng nhập</button>
                         </div>
-                        <div class="sign-in-info">
-                            <input type="password" name="password" required>
-                            <label class="info-title" id="title-password" title="Password">Mật khẩu</label>
-                        </div>
-                        <div class="forget">
-                            <a href="#">Quên mật khẩu?</a>
-                        </div>
-                        <div class="sign-in-button">
-                            <button name="signin">Đăng nhập</button>
-                        </div>
-                        <div class="register">
-                            <label for="">Chưa có tài khoản?</label>
-                            <a href="#">Đăng ký</a>
+                        <div class="overlay-right">
+                            <h1>Apple Authorized Store</h1>
+                            <p>Nhập thông tin cá nhân và bắt đầu khám phá gian hàng của Apple Store!</p>
+                            <button id="signUp">Tạo tài khoản</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </form>
+        <script type="text/javascript">
+            const signUpButton =document.getElementById('signUp');
+            const signInButton =document.getElementById('signIn');
+            const main =document.getElementById('main');
+
+            signUpButton.addEventListener('click', () => {
+                main.classList.add("right-panel-active");
+            });
+
+            signInButton.addEventListener('click', () => {
+                main.classList.remove("right-panel-active");
+            });
+        </script>
 </body>
 
 </html>
