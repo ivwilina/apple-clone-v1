@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2023 at 05:00 PM
+-- Generation Time: Oct 16, 2023 at 09:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,8 +38,31 @@ CREATE TABLE `bag` (
 --
 
 INSERT INTO `bag` (`BagId`, `Username`, `BagItem`) VALUES
-('2023/10/10-21:34:12', 'Seira Parradox', '[\"iPhone 14\",\"Tru1eafng\",\"256GB\",\"21790000\",\"/baitaplon-final/databases/product-img-data/iphone/ip14-white.jpg\"]'),
-('2023/10/8-6:36:16', 'guest01', '[\"iPhone 14\",\"yellow\",\"256GB\",\"21790000\",\"/baitaplon-final/img-files/products/ip14s/ip14-pr.png\"]');
+('', '', '[null,null,null,null,\"\"]'),
+('2023/10/17-2:22:48', 'guest01', '[\"iPhone 14 Plus\",\"Xanh\",\"256GB\",\"23990000\",\"/baitaplon-final/databases/product-img-data/iphone/ip14-p-blue.jpg\"]'),
+('2023/10/17-2:22:53', 'guest01', '[\"iPad Air\",\"Trắng\",\"WiFi 256GB\",\"18690000\",\"/baitaplon-final/databases/product-img-data/ipad/ipad-air-grey.jpg\"]'),
+('2023/10/17-2:23:2', 'guest01', '[\"Macbook Air M2\",\"Đen\",\"8GB-256GB\",\"26890000\",\"\"]');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bill`
+--
+
+CREATE TABLE `bill` (
+  `BillId` varchar(100) NOT NULL,
+  `TotalPrice` varchar(100) NOT NULL,
+  `CustomerInfo` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`CustomerInfo`)),
+  `BillItem` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`BillItem`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`BillId`, `TotalPrice`, `CustomerInfo`, `BillItem`) VALUES
+('2023/10/17-2:14:54', '47980000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Tím\",\"23,990,000\",\"1\"],[\"iPhone 14 Plus\",\"128GB\",\"Trắng\",\"21,490,000\",\"1\"]]'),
+('2023/10/17-2:21:20', '47980000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Tím\",\"23,990,000\",\"1\"],[\"iPhone 14 Plus\",\"128GB\",\"Trắng\",\"21,490,000\",\"1\"]]');
 
 -- --------------------------------------------------------
 
@@ -141,6 +164,12 @@ INSERT INTO `usertype` (`Type`, `NameType`) VALUES
 --
 ALTER TABLE `bag`
   ADD PRIMARY KEY (`BagId`);
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`BillId`);
 
 --
 -- Indexes for table `product`
