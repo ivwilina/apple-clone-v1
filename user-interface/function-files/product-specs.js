@@ -76,7 +76,7 @@ function addToCart(uname, id) {
           document.getElementById("t01").innerHTML = "Đã thêm vào giỏ hàng";
         }
       };
-      xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/checkout.php?add="+bagAdd, true);
+      xmlhttp.open("GET", "/baitaplon-final/user-interface/layout-files/php-files/add-to-cart.php?add="+bagAdd, true);
       xmlhttp.send();
 
       setTimeout(()=> {
