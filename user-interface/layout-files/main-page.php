@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-    // check login
+// check login
 
 ?>
 
@@ -36,7 +36,8 @@
         <div class="container-fluid">
             <div class="banner0">
                 <span id="product-ads">iPhone 15 Pro</span>
-                <img src="/baitaplon-final/img-files/products/product-comingsoon/ip15-banner.jpg" alt="iphone15-titanium-banner">
+                <img src="/baitaplon-final/img-files/products/product-comingsoon/ip15-banner.jpg"
+                    alt="iphone15-titanium-banner">
                 <span id="description">Sắp ra mắt</span>
             </div>
         </div>
@@ -46,7 +47,7 @@
         <div class="container-fluid">
             <div class="banner1">
                 <div class="content">
-                    <video autoplay muted>
+                    <video autoplay muted loop>
                         <source src="/baitaplon-final/img-files/products/ipads/ipad-air-video.mp4" type="video/mp4">
                     </video>
                     <div class="typo">
@@ -78,7 +79,7 @@
                         iPhone 14
                     </span>
                     <span id="product-slogan">
-                        Tuyệt mỹ.
+                        Tuyệt tác.
                     </span>
                 </div>
                 <ul class="banner2-list">
@@ -92,7 +93,7 @@
                                 Pro. Beyond.
                             </span>
                             <span class="product-price">
-                                From $1099
+                                26390000
                             </span>
                         </a>
                     </li>
@@ -106,7 +107,7 @@
                                 The Pro
                             </span>
                             <span class="product-price">
-                                From $999
+                                24990000
                             </span>
                         </a>
                     </li>
@@ -120,7 +121,7 @@
                                 Plus. Better.
                             </span>
                             <span class="product-price">
-                                From $899
+                                21490000
                             </span>
                         </a>
                     </li>
@@ -134,7 +135,7 @@
                                 Original One
                             </span>
                             <span class="product-price">
-                                From $799
+                                18790000
                             </span>
                         </a>
                     </li>
@@ -146,15 +147,15 @@
     <section id="section-banner3">
         <div class="container-fluid">
             <div class="banner3">
-                <div class="product-banner3" id="no1" >
+                <a class="product-banner3" id="no1" href="./product-specs.php?request=Macbook Air M2">
                     <span class="name-id">
-                        Macbook Air 13"
+                        Macbook Air M2
                     </span>
                     <span class="price">
-                        From $999
+                        26890000
                     </span>
                     <img src="/baitaplon-final/img-files/products/macbooks/macbook-air-m1.png" alt="macbook-pro-15">
-                </div>
+                </a>
                 <div class="product-banner3" id="no2">
                     <span class="name-id">
                         Apple Watch Utra
@@ -181,7 +182,7 @@
                     <span class="name-id">
                         Apple Watch Ultra 2
                     </span>
-                    <span class="price">
+                    <span class="price-unknow">
                         Sắp ra mắt
                     </span>
                     <img src="/baitaplon-final/img-files/products/watchs/watch-ultra2.jpg" alt="watch-ultra-2">
@@ -204,6 +205,14 @@
 
 
     <script src="/baitaplon-final/user-interface/function-files/main-page.js"></script>
+    <script>
+    let x = document.querySelectorAll(".product-price, .price");
+    for (let i = 0, len = x.length; i < len; i++) {
+        let num = Number(x[i].innerHTML)
+            .toLocaleString('en');
+        x[i].innerHTML = num;
+    }
+    </script>
 </body>
 
 </html>

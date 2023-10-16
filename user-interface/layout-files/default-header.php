@@ -37,27 +37,27 @@ session_start();
                     <!-- </div> -->
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./item-list.php?searchItem=all">
                         Sản phẩm
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./item-list.php?searchItem=Macbook">
                         Macbook
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./item-list.php?searchItem=iPhone">
                         iPhone
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./item-list.php?searchItem=iPad">
                         iPad
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./item-list.php?searchItem=Watch">
                         Watch
                     </a>
                 </li>
@@ -77,33 +77,35 @@ session_start();
     <!-- Search dropdown -->
     <div class="search-wrapper" id="search-dropdown" onmouseleave="display_search()">
         <div class="search-container">
-            <div class="search-bar" id="">
-                <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
-                <input type="text" placeholder="Nhập từ khoá">
-            </div>
-            <span>Tìm kiếm nhanh</span>
-            <ul class="quick-link">
-                <li>
-                    <a href="#">
-                        ➝ iPhone
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        ➝ iPad
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        ➝ Watch
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        ➝ Macbook
-                    </a>
-                </li>
-            </ul>
+            <form action="./item-list.php?searchItem" method="get">
+                <div class="search-bar" id="">
+                    <img src="/baitaplon-final/img-files/icons/search-icon.png" alt="Search">
+                    <input type="text" placeholder="Nhập từ khoá" name="searchItem">
+                </div>
+            </form>
+                <span>Tìm kiếm nhanh</span>
+                <ul class="quick-link">
+                    <li>
+                        <a href="./item-list.php?searchItem=iPhone">
+                            ➝ iPhone
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./item-list.php?searchItem=iPad">
+                            ➝ iPad
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./item-list.php?searchItem=Watch">
+                            ➝ Watch
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./item-list.php?searchItem=Macbook">
+                            ➝ Macbook
+                        </a>
+                    </li>
+                </ul>
         </div>
     </div>
 
@@ -124,7 +126,7 @@ session_start();
         </div>
         <ul class="user-options">
             <li>
-                <a href="">
+                <a href="./user-cart.php">
                     <img src="/baitaplon-final/img-files/icons/inventory-icon.png" alt="Search">
                     <p>Giỏ hàng</p>
                 </a>

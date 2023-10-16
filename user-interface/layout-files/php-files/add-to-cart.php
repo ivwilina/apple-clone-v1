@@ -31,7 +31,7 @@ foreach ($obj->imagesource as $imgsrc) {
 
 //encode thành json
 $specs = array($item_name, $item_color, $item_storage, $item_price,$item_colorimg);
-$specs_json = json_encode($specs);
+$specs_json = json_encode($specs, JSON_UNESCAPED_UNICODE);
 
 //add vô bảng
 $add_query = "insert into bag values('$cart_id','$user','$specs_json')";

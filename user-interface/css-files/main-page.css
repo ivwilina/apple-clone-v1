@@ -145,7 +145,7 @@ body {
 /* banner2 */
 
 #section-banner2 {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #f5f6f7;
 }
 
 .banner2 {
@@ -195,7 +195,10 @@ body {
 
 .banner2 .banner2-list li:hover {
     box-shadow: rgba(101, 222, 255, 1) 0px 5px 15px;
-    transition: all .2s ease-out;
+}
+
+.banner2 .banner2-list li:active {
+    transform: scale(0.90);
 }
 
 .banner2 .banner2-list a {
@@ -219,6 +222,14 @@ body {
 .banner2 .banner2-list .product-price {
     font-size: 16px;
     font-weight: 300;
+}
+
+.banner2 .banner2-list .product-price::before {
+    content: 'Từ ';
+}
+
+.banner2 .banner2-list .product-price::after {
+    content: 'đ';
 }
 
 /* banner3 */
@@ -266,6 +277,8 @@ body {
     justify-content: center;
     gap: 10px;
     padding: 20px 0;
+    text-decoration: none;
+    color: #000;
 }
 
 .name-id{
@@ -274,12 +287,28 @@ body {
     padding-top: 10px;
 }
 
+.price-unknow {
+    font-size: 16px;
+    font-weight: 300;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 13px;
+    padding: 3px 7px;
+}
+
 .price {
     font-size: 16px;
     font-weight: 300;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 13px;
     padding: 3px 7px;
+}
+
+.price::after {
+    content: 'đ';
+}
+
+.price::before {
+    content: 'Từ ';
 }
 
 /* typo text style */

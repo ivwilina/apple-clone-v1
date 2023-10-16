@@ -15,7 +15,7 @@
         if($data)
         {
             if($data['Type']=="user"){
-                $_SESSION['User'] = $data['Name'];
+                $_SESSION['User'] = $data['Username'];
                 header("location:/baitaplon-final/user-interface/layout-files/main-page.php?");
             }
             if($data['Type']=="admin"){

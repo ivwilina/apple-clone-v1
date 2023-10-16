@@ -126,6 +126,7 @@ body {
 .specs-wrap {
   height: 100%;
   position: relative;
+  width: 700px;
 }
 
 .specs-title {
@@ -158,13 +159,13 @@ body {
   background-color: rgba(230, 230, 230, 1);
 }
 
-.specs-name {
+.full-specs > ul > li > .specs-name {
   width: 200px;
   font-size: 17px;
 }
 
-.specs-info {
-  width: 200px;
+.full-specs > ul > li > .specs-info {
+  width: 400px;
   font-size: 17px;
 }
 
@@ -252,6 +253,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 5px;
 }
 
 .specs-selection .storage-list li > div {
@@ -262,7 +264,7 @@ body {
   border: 3px solid transparent;
   border-radius: 13px;
   box-shadow: 1px 2px 3px black;
-  width: 200px;
+  width: 160px;
   height: 70px;
 }
 
@@ -274,6 +276,10 @@ body {
 .storage-price {
   font-size: 17px;
   font-weight: 300;
+}
+
+.storage-price::after {
+  content: 'đ';
 }
 
 .selected-color {

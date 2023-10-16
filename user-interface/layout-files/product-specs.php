@@ -3,13 +3,9 @@
 require_once './php-files/sql-connection.php';
 
 $product_request = $_GET['request'];
-
 $sql_query = "SELECT * FROM product WHERE ItemName ='$product_request'";
-
 $data = mysqli_query($connect, $sql_query);
-
 $r = mysqli_fetch_assoc($data);
-
 $obj = json_decode($r['Specs']);
 
 ?>
@@ -84,7 +80,7 @@ $obj = json_decode($r['Specs']);
                                     <div class="specs-name">
                                         <?php echo $info->infoname ?>
                                     </div>
-                                    <div class="spec-info">
+                                    <div class="specs-info">
                                         <?php echo $info->detail ?>
                                     </div>
                                 </li>
@@ -125,7 +121,7 @@ $obj = json_decode($r['Specs']);
                                         <?php echo $choice->size ?>
                                     </div>
                                     <div class="storage-price">
-                                        <?php echo $choice->price ?><sup>đ</sup>
+                                        <?php echo $choice->price ?>
                                     </div>
                                 </div>
                             </li>
@@ -146,7 +142,7 @@ $obj = json_decode($r['Specs']);
                     <?php
                 } else {
                     ?>
-                    <div class="add-to-bag-button">
+                    <div class="add-to-bag-button" onclick="location.href='./sign-in-page.php'">
                         Đăng nhập để thêm vào giỏ hàng
                     </div>
                     <?php
@@ -156,6 +152,14 @@ $obj = json_decode($r['Specs']);
         </div>
     </section>
     <script src="/baitaplon-final/user-interface/function-files/product-specs.js"></script>
+    <script>
+    let x = document.querySelectorAll(".storage-price");
+    for (let i = 0, len = x.length; i < len; i++) {
+        let num = Number(x[i].innerHTML)
+            .toLocaleString('en');
+        x[i].innerHTML = num;
+    }
+    </script>
 
     <div class="footer-bar">
 
