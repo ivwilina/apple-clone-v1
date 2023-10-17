@@ -46,7 +46,6 @@ mysqli_query($connect,$add_query);
 
 for ($i=0; $i < count($itemID); $i++) { 
     $query = "DELETE FROM bag WHERE BagId='$itemID[$i]'";
-
     mysqli_query($connect,$query);
 }
 ?>

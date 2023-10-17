@@ -32,13 +32,13 @@
                 </a>
             </div>
             <div class="subpage">
-                <a href="" class="direct-subpage">
+                <a href="/baitaplon-final/user-interface/layout-files/admin-page-1.php" class="direct-subpage">
                     Sản phẩm
                 </a>
-                <a href="" class="direct-subpage">
+                <a href="/baitaplon-final/user-interface/layout-files/admin-page-3.php" class="direct-subpage">
                     Đơn hàng
                 </a>
-                <a href="" class="direct-subpage">
+                <a href="/baitaplon-final/user-interface/layout-files/admin-page-2.php" class="direct-subpage">
                     Tài khoản
                 </a>
             </div>

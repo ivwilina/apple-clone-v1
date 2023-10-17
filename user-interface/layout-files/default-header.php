@@ -132,15 +132,15 @@ session_start();
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="./user-info.php">
                     <img src="/baitaplon-final/img-files/icons/option-icon.png" alt="Search">
                     <p>Cài đặt tài khoản</p>
                 </a>
             </li>
             <li>
-                <a href="">
-                    <img src="/baitaplon-final/img-files/icons/feedback-icon.png" alt="Search">
-                    <p>Phản hồi & đánh giá</p>
+                <a href="./user-bill.php">
+                    <img src="/baitaplon-final/img-files/icons/receipt.png" alt="Search">
+                    <p>Lịch sử mua hàng</p>
                 </a>
             </li>
             <li>

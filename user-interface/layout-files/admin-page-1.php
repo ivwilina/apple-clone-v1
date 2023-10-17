@@ -2,12 +2,6 @@
 
 require_once 'php-files/admin-onload.php';
 
-session_start();
-
-if(!isset($_SESSION['Admin']))
-{
-    header("location:/baitaplon-final/user-interface/layout-files/sign-in-page.php?");
-}
 
 ?>
 
@@ -30,8 +24,12 @@ if(!isset($_SESSION['Admin']))
 <body>
     <div class="header-container">
         <?php
-        include_once 'admin-page-header.php'
-            ?>
+        include_once 'admin-page-header.php';
+
+        if (!isset($_SESSION['Admin'])) {
+            header("location:/baitaplon-final/user-interface/layout-files/sign-in-page.php?");
+        }
+        ?>
     </div>
 
     <!-- danh sách sản phẩm -->
@@ -78,10 +76,12 @@ if(!isset($_SESSION['Admin']))
                                     <?php echo $data_all_product['ItemName'] ?>
                                 </td>
                                 <td>
-                                    <div class="option" id="<?php echo $data_all_product['ItemName'] ?>" onclick="selectItemToUpdate(this.id)">
+                                    <div class="option" id="<?php echo $data_all_product['ItemName'] ?>"
+                                        onclick="selectItemToUpdate(this.id)">
                                         Chỉnh sửa
                                     </div>
-                                    <div class="option" onclick="deleteItem('<?php echo $data_all_product['ItemName'] ?>', '<?php echo $data_all_product['ItemType']?>')">
+                                    <div class="option"
+                                        onclick="deleteItem('<?php echo $data_all_product['ItemName'] ?>', '<?php echo $data_all_product['ItemType'] ?>')">
                                         Xoá
                                     </div>
                                 </td>
@@ -114,7 +114,7 @@ if(!isset($_SESSION['Admin']))
         <div class="section-wrapper">
             <div class="section-container">
                 <div class="section-title">Thêm mới sản phẩm</div>
-                <div class="ic-name">
+                <div class="ic-name" style="text-align:center">
                     Loại sản phẩm:
                 </div>
                 <div class="ic-content">

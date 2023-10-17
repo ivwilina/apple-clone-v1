@@ -41,15 +41,12 @@ section {
 }
 
 .content-view .product-title {
+    color: rgba(0, 0, 0, 1);
     width: 100%;
-    padding: 5px 0px 5px 10px;
-    color: rgba(255, 255, 255, 1);
-    font-size: 33px;
-    font-weight: bold;
-    border-top-left-radius: 13px;
-    border-bottom-left-radius: 13px;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 15%, rgba(190, 190, 190, 0.8) 30%, rgba(255, 255, 255, 0.8) 70%);
+    text-align: left;
+    padding-left: 25px;
+    font-size: 35px;
+    border-bottom: 1px solid black;
 }
 
 .content-view .product-container {

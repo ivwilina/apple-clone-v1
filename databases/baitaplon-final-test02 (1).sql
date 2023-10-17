@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2023 at 09:23 PM
+-- Generation Time: Oct 17, 2023 at 08:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,16 +33,6 @@ CREATE TABLE `bag` (
   `BagItem` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`BagItem`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `bag`
---
-
-INSERT INTO `bag` (`BagId`, `Username`, `BagItem`) VALUES
-('', '', '[null,null,null,null,\"\"]'),
-('2023/10/17-2:22:48', 'guest01', '[\"iPhone 14 Plus\",\"Xanh\",\"256GB\",\"23990000\",\"/baitaplon-final/databases/product-img-data/iphone/ip14-p-blue.jpg\"]'),
-('2023/10/17-2:22:53', 'guest01', '[\"iPad Air\",\"Trắng\",\"WiFi 256GB\",\"18690000\",\"/baitaplon-final/databases/product-img-data/ipad/ipad-air-grey.jpg\"]'),
-('2023/10/17-2:23:2', 'guest01', '[\"Macbook Air M2\",\"Đen\",\"8GB-256GB\",\"26890000\",\"\"]');
-
 -- --------------------------------------------------------
 
 --
@@ -61,6 +51,12 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`BillId`, `TotalPrice`, `CustomerInfo`, `BillItem`) VALUES
+('2023/10/11-10:50:42', '85360000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Xanh\",\"23,990,000\",\"2\"],[\"iPad Air\",\"WiFi 256GB\",\"Trắng\",\"18,690,000\",\"1\"],[\"iPad Air\",\"WiFi 256GB\",\"Xanh\",\"18,690,000\",\"1\"]]'),
+('2023/10/11-10:56:38', '23990000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Đỏ\",\"23,990,000\",\"1\"]]'),
+('2023/10/11-19:40:59', '24990000', '[\"Seira Vasta\",\"0123456780\",\"109 Baker London England\"]', '[[\"iPhone 14 Pro\",\"128GB\",\"Trắng\",\"24,990,000\",\"1\"]]'),
+('2023/10/17-10:57:19', '23990000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Xanh\",\"23,990,000\",\"1\"]]'),
+('2023/10/17-10:59:33', '80670000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"Macbook Air M2\",\"8GB-256GB\",\"Xám\",\"26,890,000\",\"1\"],[\"iPad Air\",\"WiFi 64GB\",\"Hồng\",\"13,790,000\",\"1\"],[\"iPhone 14 Plus\",\"128GB\",\"Đỏ\",\"21,490,000\",\"1\"]]'),
+('2023/10/17-19:48:36', '21490000', '[\"Seira Vasta\",\"0123456780\",\"109 Baker London England\"]', '[[\"iPhone 14 Plus\",\"128GB\",\"Đỏ\",\"21,490,000\",\"1\"]]'),
 ('2023/10/17-2:14:54', '47980000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Tím\",\"23,990,000\",\"1\"],[\"iPhone 14 Plus\",\"128GB\",\"Trắng\",\"21,490,000\",\"1\"]]'),
 ('2023/10/17-2:21:20', '47980000', '[\"Seira Parradox\",\"0123456789\",\"119 Baker London England\"]', '[[\"iPhone 14 Plus\",\"256GB\",\"Tím\",\"23,990,000\",\"1\"],[\"iPhone 14 Plus\",\"128GB\",\"Trắng\",\"21,490,000\",\"1\"]]');
 
@@ -133,8 +129,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`Username`, `Password`, `Type`, `Name`, `PhoneNumber`, `EmailAddress`, `Address`) VALUES
 ('admin1', '12345678', 'admin', 'Seira admin', '2314567456', 'admin@example.com', '123 Street'),
 ('guest01', '12345678', 'user', 'Seira Parradox', '0123456789', 'fake@email', '119 Baker London England'),
-('guest02', '12345678', 'user', 'Seira Vasta', '0123456780', 'fake@email2', '109 Baker London England'),
-('guest03', '12345678', 'user', 'test1', '0123456777', 'fake@mail.com', 'nothing street');
+('guest02', '12345678', 'user', 'Seira Vasta', '0123456780', 'testted@done', '109 Baker London England'),
+('guest03', '12345678', 'user', 'testdone', '0123456777', 'fake@mail.com', 'nothing street'),
+('zzzz', 'zzzz', 'user', 'zzzz', '9756733336', 'fake@mail.comzz', 'zzzz');
 
 -- --------------------------------------------------------
 
