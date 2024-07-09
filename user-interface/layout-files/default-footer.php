@@ -36,9 +36,9 @@
                     <span class="footer-title">Về Chúng Tôi</span>
                     <ul>
                         <li>Nguyễn Châu Anh</li>
-                        <li>Bùi Sơn Dương</li>
-                        <li>Nguyễn Thành Doanh</li>
+                        <li>Vũ Hoàng Giang</li>
                         <li>Kiều Công Việt Hưng</li>
+                        <li>Nguyễn Thành Doanh</li>
                     </ul>
                 </div>
                 <div class="contact">
